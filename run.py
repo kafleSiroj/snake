@@ -47,11 +47,13 @@ def launchHuman(speed):
             print(f"Score: {score} | Best: {best}")
             game.replay()
 
+if len(sys.argv) == 1:
+    launchHuman(20)
 
 if len(sys.argv)>3:
     raise SyntaxError("Cannot take more than 2 argument!")
 
-if len(sys.argv)<3:
+if len(sys.argv)>1 and len(sys.argv)<3:
     raise SyntaxError("Syntax Error. ['mode=' and 'speed='] is required!")
 
 modes = ['mode=human', 'mode=agent']
