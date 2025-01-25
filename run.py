@@ -64,15 +64,15 @@ args = sorted(sys.argv[1:])
 if args[0] not in modes:
     raise SyntaxError("Invalid syntax. Please use: ['mode=human' or 'mode=agent']")
 
-speedArg = args[1].split('=')
+speedArgs = args[1].split('=')
 
-if len(speedArg) > 2:
+if len(speedArgs) > 2:
     raise SyntaxError("Inavalid syntax. Please use: ['speed=(int)]")
 
-if not speedArg[-1].isdigit():
+if not speedArgs[-1].isdigit():
     raise ValueError("Speed must be a integer.")
 
-speed = int(speedArg[-1])
+speed = int(speedArgs[-1])
 
 if args[0] == modes[0]:
     launchHuman(speed=speed)
