@@ -1,6 +1,6 @@
 class Colors:
     WHITE = (225,225,225)
-    RED = (200,0,0)
+    RED = (237, 31, 17)
     BLACK = (0,0,0)
-    BLUE = (0,0,255)
-    LIGHTBLUE = (0,130,250)
+    BLUE = (62, 42, 122)
+    LIGHTBLUE = (71, 111, 186)
