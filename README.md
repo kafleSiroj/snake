@@ -31,7 +31,7 @@ This is a simple snake game, we can play in **Human Mode** as well as train an *
    
 ## Usage
 
-### Run `run.py`
+1. Run `run.py`
     # Human Mode
    ```bash
    python run.py mode=human speed=x # Speed should have an integer value i.e. `10`, `20`
