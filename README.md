@@ -1,5 +1,5 @@
 # Snake
-    This is a simple snake game, we can play in `Human Mode` as well as train an `Agent`. Used Deep-Q-Learning to train the Agent
+    This is a simple snake game, we can play in **Human Mode** as well as train an **Agent**. Used Deep-Q-Learning to train the Agent
 
 ## Installation
 
