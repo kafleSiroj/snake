@@ -1,59 +1,44 @@
-# Snake Game with AI Agent (Deep Q-Learning)
+# Snake
+This is a simple snake game, we can play in **Human Mode** as well as train an **Agent**. Used Deep-Q-Learning to train the Agent
 
-This project is a classic **Snake Game** implemented with both **Human Mode** and **Agent Mode**. In **Human Mode**, you control the snake yourself, while in **Agent Mode**, an AI (trained using **Deep-Q-Learning**) plays the game autonomously.
-
-## Features:
-- **Human Mode**: Play the snake game manually by controlling the snake.
-- **Agent Mode**: Train and run an AI agent to play the game using Deep Q-Learning.
-- **Customizable Speed**: Adjust the snake's movement speed for both modes.
-  
 ## Installation
 
-1. **Clone the Repository:**
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/kafleSiroj/snake.git
    cd snake
-Set Up a Virtual Environment (Recommended for clean dependencies):
+   ```
 
-Using venv:
+2. Create a virtual environment (recommended):
+    # Using venv
+   ```bash
+   python -m venv snake
+   source snake/bin/activate  # Windows: `snake\Scripts\activate`
+   ```
+   # Using conda
+   ```bash
+   conda create --n snake python=3.x # Python 3.7 and above recommended
+   conda activate snake
+   ```
 
-bash
-Copy
-Edit
-python -m venv snake
-source snake/bin/activate  # Windows: `snake\Scripts\activate`
-Using conda:
 
-bash
-Copy
-Edit
-conda create --n snake python=3.x  # Python 3.7 and above recommended
-conda activate snake
-Install Dependencies:
+3. Install required dependencies:
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Usage
-Running the Game:
-Human Mode: To play the game manually, run:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+## Usage
 
-bash
-Copy
-Edit
-python run.py mode=human speed=x  # Replace x with the desired speed (e.g., 10, 20)
-Agent Mode: To run the AI agent, train or test it with:
+### Running the Chatbot
 
-bash
-Copy
-Edit
-python run.py mode=agent speed=x  # Replace x with the desired speed (e.g., 10, 20)
-Enjoy playing and experimenting with both the human-controlled and AI-controlled versions of the Snake game!
-
-vbnet
-Copy
-Edit
-
-This structure adds a bit more clarity to the functionality of both modes while keeping the se
+1. Run `run.py`
+    # Human Mode
+   ```bash
+   python run.py mode=human speed=x # Speed should have an integer value i.e. `10`, `20`
+   ```
+   # Agent Mode
+   ```bash
+   python run.py mode=agent speed=x # Speed should have an integer value i.e. `10`, `20`
+   ```
