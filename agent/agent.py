@@ -8,7 +8,8 @@ import numpy as np
 from environment.env import Point, Direction, block_size, Direction
 from collections import deque
 from .agent_constants import *
-from learning.dqn import DQNNetwork, DQNTrain
+from learning.dqn import DQNNetwork
+from learning.dqtrainer import DQNTrain
 
 class Agent:
     def __init__(self):
