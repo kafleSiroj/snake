@@ -28,7 +28,6 @@ def launchAgent(speed):
 
             if score > best:
                 best = score
-                agent.model.save()
             
             print(f"Game: {agent.n_games} | Score: {score}| Best: {best}")
 
@@ -47,35 +46,45 @@ def launchHuman(speed):
             print(f"Score: {score} | Best: {best}")
             game.replay()
 
-if len(sys.argv) == 1:
-    launchHuman(20)
+def run(argv):
+    if len(argv) == 1:
+        launchHuman(20)
 
-if len(sys.argv)>3:
-    raise SyntaxError("Cannot take more than 2 argument!")
+    for i in range(len(argv)):
+        if argv[i] in (' ', ''):
+            argv.pop(i)
 
-if len(sys.argv)>1 and len(sys.argv)<3:
-    raise SyntaxError("Syntax Error. ['mode=' and 'speed='] is required!")
+    if len(argv)>3:
+        print("Cannot take more than 2 argument! Please don't use spaces before or after '='")
+        return
 
-modes = ['mode=human', 'mode=agent']
+    if len(argv)>1 and len(argv)<3:
+        print("['mode=' and 'speed='] is required!")
+        return
 
-args = sorted(sys.argv[1:])
+    modes = ['mode=human', 'mode=agent']
+
+    args = sorted(argv[1:])
 
 
-if args[0] not in modes:
-    raise SyntaxError("Invalid syntax. Please use: ['mode=human' or 'mode=agent']")
+    if args[0] not in modes:
+        print("Invalid syntax. Please use: ['mode=human' or 'mode=agent']")
+        return
 
-speedArgs = args[1].split('=')
+    speedArgs = args[1].split('=')
 
-if len(speedArgs) > 2:
-    raise SyntaxError("Inavalid syntax. Please use: ['speed=(int)]")
+    if not speedArgs[-1].isdigit():
+        print("Value Error. Speed must be a integer.")
+        return
 
-if not speedArgs[-1].isdigit():
-    raise ValueError("Speed must be a integer.")
+    speed = int(speedArgs[-1])
 
-speed = int(speedArgs[-1])
+    if args[0] == modes[0]:
+        launchHuman(speed=speed)
 
-if args[0] == modes[0]:
-    launchHuman(speed=speed)
+    elif args[0] == modes[1]:
+        launchAgent(speed=speed)
 
-elif args[0] == modes[1]:
-    launchAgent(speed=speed)
+
+if __name__ == '__main__':
+    run(sys.argv)
